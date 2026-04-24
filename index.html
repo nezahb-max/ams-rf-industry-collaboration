@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RF engineering capabilities, antenna prototypes, waveguide structures, measurements, and public-safe demo packages from the Applied Magnetic Systems Lab.">
+  <title>RF Engineering Capabilities and Industry Collaboration | Applied Magnetic Systems Lab</title>
+  <style>
+    :root {
+      --navy: #122b46;
+      --blue: #1c5d8f;
+      --teal: #287c7b;
+      --gold: #c99733;
+      --ink: #172736;
+      --muted: #5e7080;
+      --line: #d9e2ea;
+      --soft: #f4f7fa;
+      --panel: #ffffff;
+      --charcoal: #26313b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .hero-wrap {
+      background: linear-gradient(135deg, #10263f 0%, #174669 52%, #275e69 100%);
+      color: #fff;
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: anywhere;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 18px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 24px;
+    }
+
+    .meta-pill {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 8px;
+      padding: 12px 17px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: #162333;
+      background: var(--gold);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .button-secondary {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .media-card {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .media-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .media-caption {
+      padding: 16px 18px 18px;
+    }
+
+    .media-caption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .media-caption span {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 15px;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 0;
+    }
+
+    .section-center {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .section-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .soft-bg {
+      background: var(--soft);
+      padding-bottom: 64px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .capability,
+    .project-card,
+    .download-box,
+    .cta-panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .capability {
+      padding: 22px;
+      min-height: 190px;
+    }
+
+    .capability .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .capability h3,
+    .project-card h3,
+    .cta-panel h2 {
+      margin: 0;
+      color: var(--navy);
+      letter-spacing: 0;
+    }
+
+    .capability h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .capability p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .industry-band {
+      margin-top: 34px;
+      padding: 28px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--charcoal), #1f5f66);
+    }
+
+    .industry-band h2 {
+      color: #fff;
+    }
+
+    .industry-band p {
+      max-width: 850px;
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 16px;
+    }
+
+    .industry-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .industry-list li {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 14px;
+      min-height: 98px;
+      font-size: 14px;
+    }
+
+    .text-link {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .project-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #dce6ee;
+    }
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px;
+    }
+
+    .project-type {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    .project-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .project-card ul {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .project-card li {
+      margin-bottom: 7px;
+    }
+
+    .project-actions {
+      margin-top: auto;
+    }
+
+    .button-small {
+      min-height: 40px;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 14px;
+    }
+
+    .downloads {
+      padding-top: 56px;
+    }
+
+    .download-box {
+      margin-top: 24px;
+      padding: 24px;
+    }
+
+    .downloads-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .downloads-table th,
+    .downloads-table td {
+      padding: 14px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .downloads-table th {
+      color: var(--navy);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .downloads-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .downloads-table a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .policy {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 30px;
+      background: #fff;
+    }
+
+    .cta-panel p {
+      max-width: 850px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .footer-note {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.82);
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .project-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .capability-grid,
+      .industry-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-panel {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero,
+      .section,
+      .cta {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .capability-grid,
+      .industry-list {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-band,
+      .download-box,
+      .cta-panel {
+        padding: 20px;
+      }
+
+      .downloads-table,
+      .downloads-table thead,
+      .downloads-table tbody,
+      .downloads-table th,
+      .downloads-table td,
+      .downloads-table tr {
+        display: block;
+      }
+
+      .downloads-table thead {
+        display: none;
+      }
+
+      .downloads-table tr {
+        border-bottom: 1px solid var(--line);
+        padding: 12px 0;
+      }
+
+      .downloads-table td {
+        border: 0;
+        padding: 5px 0;
+      }
+
+      .actions .button,
+      .cta-panel .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Applied Magnetic Systems Lab</p>
+        <h1>RF Engineering Capabilities for Prototypes, Measurements, and Industry Projects</h1>
+        <p class="lead">The Applied Magnetic Systems Lab develops and evaluates RF structures, antenna systems, waveguide transitions, passive RF targets, and measurement workflows. This page gives companies and technical partners a compact view of selected capabilities, with public-safe demo packages prepared for external review.</p>
+        <div class="meta-row" aria-label="Project scope">
+          <span class="meta-pill">Design and simulation</span>
+          <span class="meta-pill">Prototyping and measurement</span>
+          <span class="meta-pill">Industry collaboration</span>
+        </div>
+        <div class="actions">
+          <a class="button button-primary" href="https://www.ariel.ac.il/wp/ams/">Discuss a technical challenge</a>
+          <a class="button button-secondary" href="#downloads">View public demo packages</a>
+        </div>
+      </div>
+      <aside class="media-card" aria-label="Featured RF prototype">
+        <img src="assets/project-cover-printed-horn-4ghz.jpg" alt="Printed RF horn antenna prototype and measurement visuals">
+        <div class="media-caption">
+          <strong>Public-safe technical examples</strong>
+          <span>Prototype photos, measurement context, simulation outputs, and selected downloads for external review.</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="soft-bg">
+    <section class="section">
+      <div class="section-center">
+        <p class="kicker">Engineering evidence</p>
+        <h2>From electromagnetic design to measured engineering evidence</h2>
+        <p class="section-text">The examples below are intended to communicate practical engineering depth: parametric modeling, printed RF hardware, waveguide integration, VNA-related measurements, radiation-pattern characterization, RCS studies, and comparison between theory, simulation, and experiment.</p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability">
+          <span class="number">1</span>
+          <h3>Design and feasibility</h3>
+          <p>Parametric geometry, RF concept evaluation, waveguide interfaces, horn antennas, lens-assisted systems, and passive RF target studies prepared for early technical decision-making.</p>
+        </article>
+        <article class="capability">
+          <span class="number">2</span>
+          <h3>Prototype and measurement</h3>
+          <p>Selected examples include prototype photos, measurement-oriented workflows, radiation-pattern plots, S-parameter comparisons, and benchmark studies against analytic or simulation results.</p>
+        </article>
+        <article class="capability">
+          <span class="number">3</span>
+          <h3>Industry collaboration</h3>
+          <p>A first contact point for companies seeking a focused technical discussion, feasibility check, design review, prototype path, or student-industry project.</p>
+        </article>
+      </div>
+
+      <section class="industry-band" aria-label="Industry collaboration starting points">
+        <p class="kicker" style="color: rgba(255,255,255,0.7);">Industry conversations</p>
+        <h2>Useful starting points for company conversations</h2>
+        <p>For companies working with antennas, RF sensing, waveguide components, special measurement setups, or printed RF structures, the lab can support early technical exploration before a full project is defined.</p>
+        <ul class="industry-list">
+          <li>Feasibility discussion for RF or antenna concepts</li>
+          <li>Independent review of simulation, geometry, or measurement assumptions</li>
+          <li>Prototype and test-plan planning for lab or field evaluation</li>
+          <li>Student projects and applied research collaborations with industry relevance</li>
+        </ul>
+        <a class="text-link" href="https://www.ariel.ac.il/wp/ams/">Learn more through the Applied Magnetic Systems Lab</a>
+      </section>
+    </section>
+
+    <section class="section" aria-label="Selected RF engineering examples">
+      <div class="section-center">
+        <p class="kicker">Selected examples</p>
+        <h2>Public-facing demonstrations of RF engineering work</h2>
+        <p class="section-text">Each example is framed as a public-safe technical snapshot. The downloads are intended to support discussion, not to expose full internal project files.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <img src="assets/project-cover-printed-horn-4ghz.jpg" alt="Printed fan-beam horn antenna prototype">
+          <div class="project-body">
+            <p class="project-type">Horn antenna and waveguide feed | 4 GHz</p>
+            <h3>Printed Fan-Beam Horn with WR229 Feed</h3>
+            <p>A 3D-printed horn concept for 4 GHz work with a WR229 interface, supported by measured radiation-pattern results and prototype photos.</p>
+            <ul>
+              <li>WR229 internal opening: 58.17 x 29.08 mm</li>
+              <li>Target aperture: 240 x 90 mm</li>
+              <li>Measured scan range: -90 deg to +90 deg with 1 deg step</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-small" href="downloads/printed-horn-4ghz-demo.zip">Download public demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/project-cover-xband-mode-converter.jpg" alt="X-band rectangular-to-circular waveguide mode converter">
+          <div class="project-body">
+            <p class="project-type">Waveguide mode converter | 10 GHz / X-band</p>
+            <h3>Rectangular-to-Circular Mode Converter</h3>
+            <p>A published transition with printed and metal prototype evidence, geometry visuals, and return-loss comparison plots.</p>
+            <ul>
+              <li>Printed and metallic prototype references</li>
+              <li>S11 comparison between simulation and measurement</li>
+              <li>Suitable as a feed-chain integration example</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-small" href="downloads/xband-mode-converter-demo.zip">Download public demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/project-cover-lens-horn-focusing-system.jpg" alt="Dielectric lens and circular horn feed system">
+          <div class="project-body">
+            <p class="project-type">Lens antenna system | 10 GHz</p>
+            <h3>Dielectric Lens with Circular Horn Feed</h3>
+            <p>A horn-plus-lens system that combines printed hardware with measured focusing behavior and system-level S11 comparison.</p>
+            <ul>
+              <li>Documented nominal focus: 100 mm</li>
+              <li>Measured focus reported near 95 +/- 5 mm</li>
+              <li>Includes axial-power and return-loss comparisons</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-small" href="downloads/lens-horn-focusing-demo.zip">Download public demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/project-cover-corner-reflector-rcs-validation.jpg" alt="Trihedral corner reflector RCS validation visuals">
+          <div class="project-body">
+            <p class="project-type">Passive RF target | 10 GHz</p>
+            <h3>Trihedral Corner Reflector Validation</h3>
+            <p>A trihedral corner reflector workflow with STL models, analytic and MoM comparison, and measured-data benchmarking.</p>
+            <ul>
+              <li>Analytic peak RCS: 13.27 dBsm</li>
+              <li>MoM boresight result: 14.04 dBsm</li>
+              <li>Includes preview STL and RCS comparison plots</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-small" href="downloads/corner-reflector-10ghz-demo.zip">Download public demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/project-cover-corner-reflector-tilt-sensitivity.jpg" alt="Corner reflector tilt sensitivity simulation plots">
+          <div class="project-body">
+            <p class="project-type">Sensitivity study | 10 GHz to 200 GHz projection</p>
+            <h3>Corner Reflector Tilt Sensitivity Study</h3>
+            <p>A simulation-led study of how one-face tilt changes reflector response, including a high-frequency projection.</p>
+            <ul>
+              <li>About 10 dB loss near 12 deg tilt at fixed boresight</li>
+              <li>100 GHz projection reaches -10 dB near 2.19 deg</li>
+              <li>3 dB tracked-peak angle remains near 8.60 deg through 200 GHz</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-small" href="downloads/corner-tilt-sensitivity-demo.zip">Download public demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section downloads" id="downloads" aria-label="Public-safe demo packages">
+      <div class="section-center">
+        <p class="kicker">Downloads</p>
+        <h2>Public-safe demo packages</h2>
+        <p class="section-text">Use these downloads as controlled, public-facing examples for external review. Replace the local links with WordPress Media Library URLs after upload.</p>
+      </div>
+
+      <div class="download-box">
+        <table class="downloads-table">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Includes</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4 GHz Printed Horn Demo</td>
+              <td>Summary PDF, preview images, sample radiation-pattern CSV excerpt</td>
+              <td><a href="downloads/printed-horn-4ghz-demo.zip">ZIP package</a></td>
+            </tr>
+            <tr>
+              <td>X-Band Mode Converter Demo</td>
+              <td>Summary PDF, geometry visuals, prototype images, S11 plot</td>
+              <td><a href="downloads/xband-mode-converter-demo.zip">ZIP package</a></td>
+            </tr>
+            <tr>
+              <td>Lens-Horn Focusing Demo</td>
+              <td>Summary PDF, geometry preview, axial-power comparison, S11 comparison</td>
+              <td><a href="downloads/lens-horn-focusing-demo.zip">ZIP package</a></td>
+            </tr>
+            <tr>
+              <td>10 GHz Corner Reflector Demo</td>
+              <td>Summary PDF, preview STL, RCS plots, sample CSV excerpt</td>
+              <td><a href="downloads/corner-reflector-10ghz-demo.zip">ZIP package</a></td>
+            </tr>
+            <tr>
+              <td>Corner Tilt Sensitivity Demo</td>
+              <td>Summary PDF, tilt-response plots, sample sensitivity CSV excerpt</td>
+              <td><a href="downloads/corner-tilt-sensitivity-demo.zip">ZIP package</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy">Download policy: these files are intended for public viewing and demonstration. Full project files, customer-specific geometry, and production-ready packages are available only through the appropriate private workflow.</p>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta" aria-label="Contact call to action">
+    <div class="cta-panel">
+      <div>
+        <h2>Have an RF, antenna, waveguide, or measurement challenge worth discussing?</h2>
+        <p>The examples on this page are a starting point for technical conversation. For companies and partners, the most useful next step is usually a short discussion around the engineering question, available data, constraints, and the kind of evidence needed for a decision.</p>
+      </div>
+      <a class="button button-primary" href="https://www.ariel.ac.il/wp/ams/">Contact the Applied Magnetic Systems Lab</a>
+    </div>
+  </section>
+
+  <footer class="footer-note">
+    Applied Magnetic Systems Lab | RF engineering, antenna systems, waveguide structures, prototypes, and measurement workflows
+  </footer>
+</body>
+</html>
+
