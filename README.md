@@ -39,6 +39,12 @@ The `downloads/` folder includes public-safe ZIP packages for external review.
 These packages are not full production folders and should not include private
 customer files, full internal geometry, or confidential measurement data.
 
+## Motorized Polarizer Rotator
+
+The `rotating-polarizer/` folder adds a short public page for a 3D-printed
+motorized polarizer rotator. It includes a compact description, images,
+individual STL download links, and a ZIP with all STL files.
+
 ## Recommended Positioning
 
 This repository is useful as a quiet technical portfolio:
