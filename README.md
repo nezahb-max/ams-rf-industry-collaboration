@@ -33,6 +33,17 @@ repository is not meant to replace the lab website; it supports it with
 technical examples, public-safe demo material, and an easy link for early
 industry conversation.
 
+## Lecturer and Lab Profile
+
+A profile page for Dr. Nezah Balal and the Applied Magnetic Systems Lab is
+served from the [lecturer and lab profile page](https://nezahb-max.github.io/ams-rf-industry-collaboration/lab/).
+
+## Teaching
+
+Open course materials from the lab — lecture summaries for the radar course
+"Introduction to Radar Principles" (מבוא לעקרונות מכ"ם) — are published on the
+[Applied Magnetic Systems Lab teaching page](https://www.ariel.ac.il/wp/ams/teaching/).
+
 ## Demo Packages
 
 The `downloads/` folder includes public-safe ZIP packages for external review.
